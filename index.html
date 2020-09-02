@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Regions of Ruin</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="">
+	<meta name="description" content="Regions of Ruin is a 2D side-scrolling RPG with town-building where you are introduced to an open world that progressively challenges your hero and settlement the further you delve into the vast continent.">
+	<meta property="og:title" content="Regions of Ruin" />
+	<meta property="og:description" content="Regions of Ruin is a 2D side-scrolling RPG with town-building where you are introduced to an open world that progressively challenges your hero and settlement the further you delve into the vast continent." />
+	<meta property="og:type" content="game" />
+	<meta property="og:url" content="https://regionsofruin.com/" />
+	<meta property="og:image" content="https://regionsofruin.com/images/ror-boxart.png" />
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:site" content="@VoxGamesAU" />
+	<meta property="twitter:title" content="Regions of Ruin" />
+	<meta property="twitter:description" content="Regions of Ruin is a 2D side-scrolling RPG with town-building where you are introduced to an open world that progressively challenges your hero and settlement the further you delve into the vast continent." />
+	<meta property="twitter:url" content="https://regionsofruin.com/" />
+	<meta property="twitter:image" content="https://regionsofruin.com/images/ror-boxart.png" />
+	<link rel="icon" href="favicon.png" type="image/png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+	<script type="application/ld+json">
+	{
+	  "@context": "http://schema.org",
+	  "@type":"VideoGame",
+	  "name":[
+	    {
+	      "@language":"en",
+	      "@value":"Regions of Ruin"
+	    }
+	  ],
+	  "description":[
+	    {
+	      "@language":"en",
+	      "@value":"Regions of Ruin is a 2D side-scrolling RPG with town-building where you are introduced to an open world that progressively challenges your hero and settlement the further you delve into the vast continent."
+	    }
+	  ],
+	  "genre":[
+	    "Adventure RPG",
+	    "Town Management"
+	  ],
+	  "url":"https://regionsofruin.com/",
+	  "image":"https://regionsofruin.com/images/ror-boxart.png",
+	  "trailer":{
+	    "@type":"VideoObject",
+	    "url":"https://www.youtube.com/watch?v=ClrVXGbeuC8",
+	    "inLanguage":"en"
+	  }
+	}
+	</script>
+	<style>
+	body {
+		background: #000;
+	}
+
+	.hero {
+		background: transparent !important;
+	}
+
+	.modal img {
+		cursor: pointer;
+	}
+
+	.modal .modal-image,
+	.modal iframe {
+		max-height: calc(100vh - 40px);
+    	max-width: calc(100vw - 40px);
+    	overflow: auto;
+	}
+
+	.modal .modal-content {
+		width: 100% !important;
+		overflow: hidden !important;
+	}
+
+	.container .content {
+		max-width: 800px;
+		margin: 0 auto 3rem;
+	}
+
+	.container .content p {
+		text-align: justify;
+	}
+
+	.tile-screenshot {
+		background: none;
+		padding: 0;
+		border-radius: 0;
+	}
+
+	.tile-trailer:hover .button {
+		transform: translate(-50%,-45%) scale(1.2) !important;
+	}
+
+	.plan-image {
+		display: none;
+	}
+
+	@media screen and (min-width:1280px) {
+		.plan-image {
+			display: block;
+		}
+
+		.plan-image img {
+			max-width: 220px;
+			display: block;
+			margin: 0.5rem auto 0;
+		}
+	}
+
+	@media screen and (min-width:1470px) {
+		.plan-image img {
+			max-width: 280px;
+			display: block;
+			margin: 0.5rem auto 0;
+		}
+	}
+
+	#landing {
+		background: transparent url(images/hd-img.png) no-repeat fixed center center / cover !important;
+		position: relative;
+		overflow: hidden;
+	}
+
+	#landing .hero-head,
+	#landing .hero-foot {
+		position: relative;
+		z-index: 4;
+	}
+
+	#landing .hero-body img {
+		 z-index: 2;
+		 top: 30%;
+		 left: 50%;
+		 transform: translate(-50%,-45%);
+		 position: absolute;
+		 max-width: 920px;
+	}
+
+	#landing .hero-foot {
+		padding: 1.5rem 0 1.3rem;
+		background: -moz-linear-gradient(top, transparent 0%, rgba(0,0,0,1) 100%);
+		background: -webkit-linear-gradient(top, transparent 0%,rgba(0,0,0,1) 100%);
+		background: linear-gradient(to bottom, transparent 0%,rgba(0,0,0,1) 100%);
+	}
+
+	#landing .hero-foot p {
+		margin-top: 0.75rem;
+	}
+
+	#footer {
+		background: transparent;
+		margin-top: 6rem;
+	}
+
+	a {
+		color: #1d9ca6;
+	}
+
+	a:hover {
+		color: #999;
+	}
+	</style>
+</head>
+<body>
+	<div class="modal">
+		<div class="modal-background"></div>
+		<div class="modal-container">
+			<div class="modal-content"></div>
+		</div>
+		<button class="modal-close is-large" aria-label="close"></button>
+	</div>
+
+	<section id="landing" class="hero is-fullheight is-black">
+		<div class="hero-body">
+			<img src="images/title-img.png" alt="Regions of Ruin">
+		</div>
+		<div class="hero-foot has-text-centered">
+			<a href="https://store.steampowered.com/app/680360/Regions_Of_Ruin/" class="button is-white is-rounded is-outlined" target="_blank">
+				<span class="icon is-hidden-mobile">
+					<svg class="fab fa-steam" aria-label="Steam" style="fill: currentColor;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-steam"></use></svg>
+				</span>
+				<span>Buy on Steam</span>
+			</a>
+			<a href="https://voxgames.itch.io/regions-of-ruin" class="button is-white is-rounded is-outlined" target="_blank">
+				<span>DRM free from itch.io</span>
+			</a>
+			<br><br>
+			<img src="images/platforms.png" style="max-width: 400px;">
+		</div>
+	</section>
+
+	<section class="hero is-medium is-dark">
+		<div class="hero-body">
+			<div class="container has-text-centered">
+				<div class="content" style="margin-bottom: 0">
+					<h2 id="about" class="title is-size-4-mobile"><em>"Ever wonder what would happen if Elder Scrolls met Kingdom? well this is the result of that."</em></h2>
+					<p>Regions of Ruin is a 2D side-scrolling RPG with town-building where you are introduced to an open world that progressively challenges your hero and settlement the further you delve into the vast continent. Our <a href="https://www.regionsofruin.com/press">presskit has more</a>.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="hero is-medium is-dark">
+		<div class="hero-body">
+			<div class="container has-text-centered">
+				<div class="content">
+					<h2 class="title is-size-4-mobile">Trailer &amp; Screenshots</h2>
+				</div>
+				<div class="tile is-ancestor">
+					<div class="tile is-parent">
+						<a href="https://www.youtube.com/embed/dZXCXybK_sQ" class="tile tile-trailer is-child box" style="background: url(images/video.jpg) no-repeat center center; background-size: cover; padding: 0; border-radius: 0;" target="_blank">
+							<figure class="image is-16by9">
+								<span class="button is-danger is-large" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);">
+									<span class="icon is-medium" style="padding: 5px;">
+										<svg class="fas fa-play" aria-label="Play" style="fill: currentColor;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use></svg>
+									</span>
+								</span>
+							</figure>
+						</a>
+					</div>
+					<div class="tile is-3 is-vertical is-parent">
+						<a href="images/screen1.png" class="tile tile-screenshot is-child box">
+							<figure class="image is-16by9">
+								<img src="images/thumb-screen1.png" alt="Regions of Ruin">
+							</figure>
+						</a>
+						<a href="images/screen2.png" class="tile tile-screenshot is-child box">
+							<figure class="image is-16by9">
+								<img src="images/thumb-screen2.png" alt="Regions of Ruin">
+							</figure>
+						</a>
+					</div>
+					<div class="tile is-3 is-vertical is-parent">
+						<a href="images/screen3.png" class="tile tile-screenshot is-child box">
+							<figure class="image is-16by9">
+								<img src="images/thumb-screen3.png" alt="Regions of Ruin">
+							</figure>
+						</a>
+						<a href="images/screen4.png" class="tile tile-screenshot is-child box">
+							<figure class="image is-16by9">
+								<img src="images/thumb-screen4.png" alt="Regions of Ruin">
+							</figure>
+						</a>
+					</div>
+				</div>
+				<div class="tile is-ancestor">
+					<div class="tile is-3 is-parent">
+						<a href="images/screen5.png" class="tile tile-screenshot is-child box">
+							<figure class="image is-16by9">
+								<img src="images/thumb-screen5.png" alt="Regions of Ruin">
+							</figure>
+						</a>
+					</div>
+					<div class="tile is-3 is-parent">
+						<a href="images/screen6.png" class="tile tile-screenshot is-child box">
+							<figure class="image is-16by9">
+								<img src="images/thumb-screen6.png" alt="Regions of Ruin">
+							</figure>
+						</a>
+					</div>
+					<div class="tile is-3 is-parent">
+						<a href="images/screen7.png" class="tile tile-screenshot is-child box">
+							<figure class="image is-16by9">
+								<img src="images/thumb-screen7.png" alt="Regions of Ruin">
+							</figure>
+						</a>
+					</div>
+					<div class="tile is-3 is-parent">
+						<a href="images/screen8.png" class="tile tile-screenshot is-child box">
+							<figure class="image is-16by9">
+								<img src="images/thumb-screen8.png" alt="Regions of Ruin">
+							</figure>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="hero is-small is-dark">
+		<div class="hero-body has-text-centered">
+			<iframe src="http://store.steampowered.com/widget/680360/" frameborder="0" width="646" height="190" style="margin"></iframe>
+		</div>
+	</section>
+
+	<footer id="footer" class="footer">
+		<div class="content has-text-centered has-text-white">
+			<div class="container">
+				<div class="level" style="position: relative; margin: 2rem auto 0; padding: 0 1rem; max-width: 800px">
+					<div class="level-item"><img src="images/thumbsUp.png" alt="Thanks for your support"></div>
+					<div class="level-item"><a href="https://www.humblebundle.com/store/regions-of-ruin"><img src="images/humble-finance.png" alt="Financed by Humble Bundle" ></a></div>
+					<div class="level-item"><a href="http://voxgames.net/"><img src="images/lg3.png" alt="Made by VOX games"></a></div>
+				</div>
+			</div>
+			<br><br>
+			<p>Save the Dwarven Race from extinction. Find us on <a href="https://store.steampowered.com/app/680360/Regions_Of_Ruin/" target="_blank">Steam</a>, <a href="https://www.humblebundle.com/store/regions-of-ruin" target="_blank">Humble</a>, <a href="https://voxgames.itch.io/regions-of-ruin" target="_blank">itch.io</a>, <a href="https://www.indiedb.com/games/regions-of-ruin" target="_blank">IndieDB</a>, <a href="https://discordapp.com/invite/cE2uX6A/" target="_blank">Discord</a>, <a href="https://twitter.com/VoxGamesAU" target="_blank">Twitter</a>, <a href="https://regionsofruin.com/press" target="_blank">Presskit</a> or <a href="mailto:alexpoysky@gmail.com?subject=Regions%20of%20Ruin">email us</a>.</p>
+		</div>
+	</footer>
+
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none;"><symbol id="icon-steam" viewBox="0 0 448 512"><path d="M395.5 177.5c0 33.8-27.5 61-61 61-33.8 0-61-27.3-61-61s27.3-61 61-61c33.5 0 61 27.2 61 61zm52.5.2c0 63-51 113.8-113.7 113.8L225 371.3c-4 43-40.5 76.8-84.5 76.8-40.5 0-74.7-28.8-83-67L0 358V250.7L97.2 290c15.1-9.2 32.2-13.3 52-11.5l71-101.7c.5-62.3 51.5-112.8 114-112.8C397 64 448 115 448 177.7zM203 363c0-34.7-27.8-62.5-62.5-62.5-4.5 0-9 .5-13.5 1.5l26 10.5c25.5 10.2 38 39 27.7 64.5-10.2 25.5-39.2 38-64.7 27.5-10.2-4-20.5-8.3-30.7-12.2 10.5 19.7 31.2 33.2 55.2 33.2 34.7 0 62.5-27.8 62.5-62.5zm207.5-185.3c0-42-34.3-76.2-76.2-76.2-42.3 0-76.5 34.2-76.5 76.2 0 42.2 34.3 76.2 76.5 76.2 41.9.1 76.2-33.9 76.2-76.2z"/></symbol><symbol id="icon-play" viewBox="0 0 448 512"><path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"/></symbol></svg>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		lazyLoad = function(e) {
+			$(e).find("img").attr("src", $(e).find("img").data("src"));
+		};
+
+		$(".tile-trailer").on("click", function(){
+			if(youtubeParser($(this).attr("href"))) {
+				$(".modal").addClass("is-active").find(".modal-content").html('<iframe width="640" height="360" src="//www.youtube.com/embed/'+youtubeParser($(this).attr("href"))+'?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+				return false;
+			} else {
+				return true;
+			}
+		});
+
+		$(".tile-screenshot").on("click", function(){
+			img = $(this).find("img").clone().click(function(){
+				img = $(this);
+				next = false;
+
+				$(".tile-screenshot").each(function(){
+					if(next) {
+						img.attr("src", $(this).attr("href"));
+						next = false;
+					} else if($(this).attr("href") == img.attr("src")) {
+						next = true;
+					}
+				});
+
+				if(next) {
+					img.attr("src", $(".tile-screenshot:eq(0)").attr("href"));
+				}
+			});
+			$(".modal").addClass("is-active").find(".modal-content").html(img.addClass("modal-image").attr("src", $(this).attr("href")));
+			return false;
+		});
+
+		$(".modal").on("click", ".modal-close,.modal-background", function(){
+			$(".modal.is-active").removeClass("is-active");
+			$(".modal img,.modal iframe").remove();
+			return false;
+		});
+
+		$(document).keyup(function(e) {
+			if(e.keyCode === 27) {
+				$(".modal.is-active").removeClass("is-active");
+				$(".modal img,.modal iframe").remove();
+			}
+		});
+	});
+
+	youtubeParser = function(url) {
+		var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+		var match = url.match(regExp);
+		return (match&&match[7].length==11)? match[7] : false;
+	};
+	</script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-105797474-4"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments)};
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-105797474-4');
+	</script>
+</body>
+</html>

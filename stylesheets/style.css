@@ -1,0 +1,127 @@
+
+body {
+  font-family: 'Avenir', 'Helvetica', 'Arial';
+  background-color: #000000;
+  font-size: 16pt;
+  color: #fff;
+  padding: 0 0 0 0;
+  margin: -20px 0 0 0;
+}
+
+h1 {
+text-align: center;
+margin: 0 0 0 0;
+padding: 0 0 0 0;
+}
+
+h2 {
+text-align: center;
+margin: -100px 0 0 0;
+padding: 0 0 0 0;
+}
+
+.title {
+    background-color: #000;
+	  width: 100%;
+	  height: 600px;
+	  background-image: url('../images/hd-img.png');
+    background-size: 100%;
+    background-position: center;
+}
+
+.seg1 {
+  width: 100%;
+  height: 600px;
+  padding: 10px 0px 10px 0px;
+  background-image: url('../images/grad-1.png');
+  background-size: 100% 100%;
+}
+
+.seg2 {
+  width: 100%;
+  height: 1050px;
+  padding: 10px 0px 10px 0px;
+  background-image: url('../images/grad-2.png');
+  background-size: 100% 100%;
+}
+
+.seg2-mid {
+  width: 920px;
+  position: relative;
+  margin: auto;
+}
+
+.seg2-mid-2 {
+  width: 650px;
+  position: relative;
+  margin: auto;
+}
+
+.title-div {  
+  position: fixed;
+  width: 100%;
+  margin: -10px auto;
+}
+
+.tittle-img-div {
+  margin: auto;
+  width: 450px;
+}
+
+.platform-div {
+  width: 520px;
+  margin: auto;
+}
+
+.p-div {
+  vertical-align: middle;
+  position: relative;
+  display: block;
+  width: 400px;
+  margin: auto;
+  text-align: center;
+}
+
+.logo {
+  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+  margin: auto auto;
+  padding: 20px;
+  width: 180px;
+}
+
+.vid-frame {
+  width: 700px;
+  height: 500px;
+  margin: auto auto;
+}
+
+.slide-div {
+  background-color: #000;
+  width: 900px;
+  height: 500px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.s-img {
+  width: 900px;
+  position: absolute;
+}
+
+.foot {
+  width: 100%;
+  height: 50px;
+  background-color: #000;
+  text-align: center;
+  font-size: 12pt;
+}
+
+.foot img {
+  width: 75px;
+  position: relative;
+  float: center;
+  cursor: pointer;
+}
+
